@@ -30,5 +30,20 @@
 # help(print)
 
 
-
-
+# studi python with W3School
+print("Hello, World!")
+#cek versi python
+import sys
+print(sys.version)
+# indentasi
+if 5 > 2 :
+    print("Five is greater than two!") #menjorok
+if 5 > 2 :
+        print("Five is greater than two!") # lebih menjorok
+               print("Five is greater than two!") #error
+               
+# Variabel
+x = 2
+y = "Hello, World!"
+print(x)
+print(y)
