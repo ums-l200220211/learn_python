@@ -132,4 +132,84 @@ print(f"I am doing chest day with {barbel}") #global variable
 x = 4 
 cmplx = complex(x) #complex number
 print(type(cmplx)) 
-print(len(cmplx)) #error 
+# print(len(cmplx)) #error 
+
+# Data Type in Python
+x = "Hello, World!" #str
+x = 20 #int
+x = 20.5 #float
+x = 1j #complex
+x = ["apple", "banana", "cherry"] #list
+x = ("apple", "banana", "cherry") #tuple
+x = range(6) #range
+x = {"name" : "John", "age" : 36} #dict
+x = {"apple", "banana", "cherry"} #set
+x = frozenset({"apple", "banana", "cherry"}) #frozenset
+x = True #bool
+x = b"Hello" #bytes
+x = bytearray(5) #bytearray
+x = memoryview(bytes(5)) #memoryview
+x = None #None
+print(type(x))
+
+# random number
+import random
+print(random.randrange(1, 10)) #random number between 1 to 9 
+
+# string in python
+x = "Hello, World!" #double quotes
+x = 'Hello, World!' #single quotes
+x = 'Hello, "World!"' #single quotes inside double quotes 
+print(x)  
+
+# string as array
+x = "Hello, World!"
+print(x[1]) #e
+print(x[2:5]) #llo
+print(x[-5:-2]) #orl
+print(len(x)) #12
+
+# loop through a string
+for i in "Barbel":
+    print(i)
+
+# check string
+txt = "Chesday is the best day"
+if "Ches" in txt:
+    print("Yes, 'Ches' in txt")
+
+# check if not
+txt = "Chesday is the best day"
+if "leg" not in txt:
+    print("Yes, 'leg' not in txt")
+
+# format string
+x = 4
+txt = f"my age is {x+16} and my GPA is {x:.2f}" 
+print(txt)
+
+# escape character
+txt = "We are the so-called \"Vikings\" from the north."
+print(txt)
+# \'    Single Quote
+# \\    Backslash
+# \n    New Line
+# \r    Carriage Return
+# \t    Tab
+# \b    Backspace
+# \f    Form Feed
+# \ooo  Octal value
+# \xhh  Hex value
+print("Hello\nWorld!") #new line
+print("Hello\tWorld!") #tab   
+
+# string method
+a = " Hello, World! "
+print(a.translate({119: 101, 111: 105, 114: 117})) #translate
+print(a.strip()) #remove whitespace from beginning or end
+print(a.lstrip()) #remove whitespace from beginning
+print(a.rstrip()) #remove whitespace from end
+# masih banyak method lainnya
+
+
+
