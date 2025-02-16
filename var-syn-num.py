@@ -211,5 +211,88 @@ print(a.lstrip()) #remove whitespace from beginning
 print(a.rstrip()) #remove whitespace from end
 # masih banyak method lainnya
 
+# Boolean Values
+print(10 > 9) #True
+print(10 == 9) #False
+print(10 < 9) #False
+
+x = 200
+print(isinstance(x, int)) #check if x is an integer
+
+def fungsiBool():
+    return True
+if fungsiBool():
+    print("Yes")
+else:
+    print("No")
+
+# Python Operators
+# Arithmetic Operators
+x = 5
+y = 3
+print(x + y) #8
+print(x - y) #2
+print(x * y) #15
+print(x / y) #1.6666666666666667
+print(x % y) #2
+print(x ** y) #125
+print(x // y) #1
+print(100 + 5 * 3) #115 (5 * 3 = 15, 100 + 15 = 115)
+
+# Assignment Operators
+x = 5
+x += 3
+print(x) #8
+x -= 3
+print(x) #5
+x *= 3
+print(x) #15
+x /= 3
+print(x) #5.0
+x %= 3
+print(x) #2.0
+x **= 3
+print(x) #8.0
+x //= 3
+print(x) #2.0
+
+# Comparison Operators
+x = 5
+y = 3
+print(x == y) #False
+print(x != y) #True
+print(x > y) #True
+print(x < y) #False
+print(x >= y) #True
+print(x <= y) #False
+
+# Logical Operators
+x = 5
+print(x > 3 and x < 10) #True
+print(x > 3 or x < 4) #True
+print(not(x > 3 and x < 10)) #False
+
+# Identity Operators
+x = ["apple", "banana"]
+y = ["apple", "banana"]
+z = x
+print(x is z) #True
+print(x is y) #False
+print(x == y) #True
+
+# Membership Operators
+x = ["apple", "banana"]
+print("banana" in x) #True
+print("pineapple" not in x) #True
+
+# Bitwise Operators
+x = 5
+y = 3
+print(x & y) #1
+print(x | y) #7
+print(x ^ y) #6
+print(~x) #-6
+print(x << 2) #20
+print(x >> 2) #1
 
 
