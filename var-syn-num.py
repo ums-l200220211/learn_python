@@ -295,4 +295,132 @@ print(~x) #-6
 print(x << 2) #20
 print(x >> 2) #1
 
+# Python Collections (Arrays)
+# List
+listAlatGym = ["Barbel", "Dumbell", "Pull up bar"]
+print(listAlatGym)
+
+# Access Items
+print(listAlatGym[1]) #Dumbell
+print(listAlatGym[-1]) #Pull up bar
+print(listAlatGym[1:2]) #['Dumbell']
+print(listAlatGym[:2]) #['Barbel', 'Dumbell']
+print(listAlatGym[1:]) #['Dumbell', 'Pull up bar']
+
+# Change Item Value
+listAlatGym[1] = "Kettlebell"
+print(listAlatGym)
+
+# insert() method
+listAlatGym.insert(2, "Dumbell")
+print(listAlatGym)
+
+# append() method
+listAlatGym.append("Bench press")
+print(listAlatGym)
+
+# extend() method
+listAlatGym.extend(["Squat rack", "Treadmill"])
+print(listAlatGym)
+
+# remove() method
+listAlatGym.remove("Treadmill")
+print(listAlatGym)
+# pop() method
+listAlatGym.pop(1) #remove index 1
+print(listAlatGym)
+# del keyword
+del listAlatGym[2] #remove index 2
+print(listAlatGym)
+# clear() method
+listAlatGym.clear() #remove all items
+print(listAlatGym)
+
+# loop through a list
+listAlatGym = ["Barbel", "Dumbell", "Pull up bar"]
+for i in listAlatGym:
+    print(i)
+
+# Loop Through the Index Numbers
+for i in range(len(listAlatGym)): #range(3) = 0, 1, 2
+    print(listAlatGym[i])   
+
+# Using a While Loop
+i = 0 #index
+while i < len(listAlatGym): #range(3) = 0, 1, 2
+    print(listAlatGym[i]) 
+    i += 1 #increment the index
+    
+# List Comprehension
+[print(i) for i in listAlatGym]
+
+# example List Comprehension
+newListAlatGym = [] #empty list
+for i in listAlatGym: #loop through listAlatGym
+    if "e" in i: #check if 'a' in i
+        newListAlatGym.append(i) #add i to newListAlatGym
+print(newListAlatGym) #['Barbel', 'Dumbell', 'Pull up bar']
+
+# Example List Comprehension
+newListAlatGym = [i for i in listAlatGym if "e" in i] #loop through listAlatGym and add i to newListAlatGym if 'e' in i
+print(newListAlatGym) #['Barbel', 'Dumbell', 'Pull up bar']
+
+# Example List Comprehension
+newListAlatGym = [i if i != "Barbel" else "Treadmill" for i in listAlatGym] #loop through listAlatGym and add i to newListAlatGym if i != 'Barbel' else add 'Treadmill'
+print(newListAlatGym) # ['Treadmill', 'Dumbell', 'Pull up bar']
+
+# Sort List Alphabetic
+listAlatGym.sort()
+print(listAlatGym)
+
+# Sort List Numerically
+ListBeban = [20, 10, 30, 5]
+ListBeban.sort()
+print(ListBeban)
+
+# Sort Descending
+ListBeban.sort(reverse = True)
+print(ListBeban)
+
+# Custom Sort Function
+def myfunc(n): 
+  return abs(n - 82) #return the absolute value of n - 82
+thislist = [100, 50, 65, 82, 23] 
+thislist.sort(key = myfunc) #sort the list based on the return value of the function
+print(thislist)
+
+# Case Insensitive Sort
+thislist = ["banana", "Orange", "Kiwi", "cherry"]
+thislist.sort(key = str.lower) #sort the list based on the lower case
+print(thislist)
+
+# Reverse Order
+thislist.reverse()
+print(thislist)
+
+# Copy a List
+newListAlatGym = listAlatGym.copy()
+print(newListAlatGym)
+# Another way to make a copy is to use the built-in method list()
+newListAlatGym = list(listAlatGym) 
+print(newListAlatGym)
+# Another way to make a copy is to use the slice operator
+newListAlatGym = listAlatGym[:] #listAlatGym[start:stop]
+print(newListAlatGym)
+
+# Join Two Lists
+listAlatGym = ["Barbel", "Dumbell", "Pull up bar"]
+ListBeban = [20, 10, 30, 5]
+listGabungan = listAlatGym + ListBeban
+print(listGabungan)
+
+# Append List
+for i in ListBeban:
+    listAlatGym.append(i)
+print(listAlatGym)
+
+# Extend List
+listAlatGym.extend(ListBeban) 
+print(listAlatGym) 
+
 
