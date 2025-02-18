@@ -366,6 +366,11 @@ newListAlatGym = [i for i in listAlatGym if "e" in i] #loop through listAlatGym 
 print(newListAlatGym) #['Barbel', 'Dumbell', 'Pull up bar']
 
 # Example List Comprehension
+listAlatGym = ["Barbel", "Dumbell", "Pull up bar"]
+newListAlatGym = ["Pull up bar" for i in listAlatGym] #loop through listAlatGym and add 'Pull up bar' to newListAlatGym
+print(newListAlatGym) #['Pull up bar', 'Pull up bar', 'Pull up bar']
+
+# Example List Comprehension
 newListAlatGym = [i if i != "Barbel" else "Treadmill" for i in listAlatGym] #loop through listAlatGym and add i to newListAlatGym if i != 'Barbel' else add 'Treadmill'
 print(newListAlatGym) # ['Treadmill', 'Dumbell', 'Pull up bar']
 
@@ -422,5 +427,80 @@ print(listAlatGym)
 # Extend List
 listAlatGym.extend(ListBeban) 
 print(listAlatGym) 
+
+# Tuple (ordered and unchangeable)
+tupleAlatGym = ("Switch Machine", "Bench Press", "Lat Pulldown")
+print(tupleAlatGym)
+
+# Access Tuple Items
+print(tupleAlatGym[1]) #Bench Press
+print(tupleAlatGym[-1]) #Lat Pulldown
+print(tupleAlatGym[1:2]) #('Bench Press',)
+print(tupleAlatGym[:2]) #('Switch Machine', 'Bench Press')
+print(tupleAlatGym[1:]) #('Bench Press', 'Lat Pulldown')
+
+# Change Tuple Values
+# tupleAlatGym[1] = "Kettlebell" #error
+# Convert the tuple into a list, change the list, and convert the list back into a tuple    
+listAlatGym = list(tupleAlatGym)
+listAlatGym[1] = "Kettlebell"
+tupleAlatGym = tuple(listAlatGym)
+print(tupleAlatGym)
+
+# Tuple() Constructor
+tupleAlatGym = tuple(("Switch Machine", "Bench Press", "Lat Pulldown"))
+print(tupleAlatGym)
+
+# Unpack Tuples
+tupleAlatGym = ("Switch Machine", "Bench Press", "Lat Pulldown")
+(Switch, Bench, Lat) = tupleAlatGym
+print(Switch, Bench, Lat)
+
+# Using Asterisk*
+tupleAlatGym = ("Switch Machine", "Bench Press", "Lat Pulldown", "Kettlebell")
+(Switch, Bench, *Lat) = tupleAlatGym
+print(Switch, Bench, Lat)
+# If the asterisk is added to another variable name than the last, Python will assign values to the variable until the number of values left matches the number of variables left.
+tupleAlatGym = ("Switch Machine", "Bench Press", "Lat Pulldown", "Kettlebell")
+(Switch, *Bench, Lat) = tupleAlatGym
+print(Switch, Bench, Lat)
+
+# Loop Through a Tuple
+tupleAlatGym = ("Switch Machine", "Bench Press", "Lat Pulldown")
+for i in tupleAlatGym:
+    print(i)
+
+# Loop Through the Index Numbers
+for i in range(len(tupleAlatGym)): #range(3) = 0, 1, 2
+    print(tupleAlatGym[i])
+
+# Using a While Loop   
+i = 0 #index
+while i < len(tupleAlatGym): #range(3) = 0, 1, 2
+    print(tupleAlatGym[i])
+    i += 1 #increment the index
+
+# Tuple Comprehension
+[print(i) for i in tupleAlatGym]
+
+# join two tuples
+tupleAlatGym = ("Switch Machine", "Bench Press", "Lat Pulldown")
+tupleBeban = (20, 10, 30, 5)
+tupleGabungan = tupleAlatGym + tupleBeban
+print(tupleGabungan)
+
+# The tuple() Constructor
+tupleAlatGym = tuple(("Switch Machine", "Bench Press", "Lat Pulldown"))
+print(tupleAlatGym)
+
+# Tuple Methods
+# count() method
+tupleAlatGym = ("Switch Machine", "Bench Press", "Lat Pulldown")
+print(tupleAlatGym.count("Bench Press")) #1
+# index() method
+print(tupleAlatGym.index("Bench Press")) #1
+
+
+
 
 
