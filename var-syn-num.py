@@ -500,6 +500,109 @@ print(tupleAlatGym.count("Bench Press")) #1
 # index() method
 print(tupleAlatGym.index("Bench Press")) #1
 
+# Set (unordered and unindexed)
+setAlatGym = {"Barbel", "Dumbell", "Pull up bar"}
+print(setAlatGym)
+
+# Access Items
+# print(setAlatGym[1]) #error
+for i in setAlatGym:
+    print(i)
+    
+# Change Items
+# setAlatGym[1] = "Kettlebell" #error
+setAlatGym.add("Kettlebell")
+print(setAlatGym) #{'Barbel', 'Dumbell', 'Pull up bar', 'Kettlebell'}
+
+# Add Items
+setAlatGym.add("Bench press")
+print(setAlatGym) #{'Barbel', 'Dumbell', 'Pull up bar', 'Kettlebell', 'Bench press'}
+
+# add any iterable
+listAlatGym = ["Squat rack", "Treadmill"]
+setAlatGym.update(listAlatGym)
+print(setAlatGym) #{'Barbel', 'Dumbell', 'Pull up bar', 'Kettlebell', 'Bench press', 'Squat rack', 'Treadmill'}
+
+# update() method
+setAlatGym.update(["Squat rack",0])
+print(setAlatGym) #{0, 'Barbel', 'Dumbell', 'Pull up bar', 'Kettlebell', 'Bench press', 'Squat rack'}
+
+# Get the Length of a Set
+print(len(setAlatGym)) #7
+
+# Remove Item
+setAlatGym.remove("Squat rack")
+print(setAlatGym) #{0, 'Barbel', 'Dumbell', 'Pull up bar', 'Kettlebell', 'Bench press'}
+
+# discard() method
+setAlatGym.discard(0)
+print(setAlatGym) #{'Barbel', 'Dumbell', 'Pull up bar', 'Kettlebell', 'Bench press'}
+
+# pop() method
+setAlatGym.pop()
+print(setAlatGym) #{'Dumbell', 'Pull up bar', 'Kettlebell', 'Bench press'}
+
+# clear() method
+setAlatGym.clear()
+print(setAlatGym) #set()
+
+# del keyword
+del setAlatGym
+# print(setAlatGym) #error
+
+# Loop Through a Set
+setAlatGym = {"Barbel", "Dumbell", "Pull up bar"}
+for i in setAlatGym:
+    print(i) #
+    
+# Check if Item Exists
+print("Barbel" in setAlatGym) #True
+
+# Join Two Sets
+setAlatGym = {"Barbel", "Dumbell", "Pull up bar"}
+setBeban = {20, 10, 30, 5}
+setGabungan = setAlatGym.union(setBeban)
+print(setGabungan) #{'Barbel', 5, 'Dumbell', 10, 'Pull up bar', 20, 30}
+
+# The set() Constructor
+setAlatGym = set(("Barbel", "Dumbell", "Pull up bar"))
+print(setAlatGym) #{'Barbel', 'Dumbell', 'Pull up bar'}
+
+# join set
+# update() method
+setAlatGym = {"Barbel", "Dumbell", "Pull up bar"}
+setBeban = {20, 10, 30, 5}
+setAlatGym.update(setBeban)
+print(setAlatGym) #{'Barbel', 5, 'Dumbell', 10, 'Pull up bar', 20, 30}
+
+# Union() method
+setAlatGym = {"Barbel", "Dumbell", "Pull up bar"}
+setBeban = {20, 10, 30, 5}
+setGabungan = setAlatGym.union(setBeban)
+print(setGabungan) #{'Barbel', 5, 'Dumbell', 10, 'Pull up bar', 20, 30}
+
+# intersection() method
+setAlatGym = {"Barbel", "Dumbell", "Pull up bar"}
+setBeban = {"Barbel", 10, 30, 5}
+setGabungan = setAlatGym.intersection(setBeban)
+print(setGabungan) #{'Barbel'} keep only the duplicates
+
+# difference() method
+setAlatGym = {"Barbel", "Dumbell", "Pull up bar"}
+setBeban = {"Barbel", 10, 30, 5}
+setGabungan = setAlatGym.difference(setBeban)
+print(setGabungan) #{'Dumbell', 'Pull up bar'} keep only the differences
+
+# symmetric_difference() method
+setAlatGym = {"Barbel", "Dumbell", "Pull up bar"}
+setBeban = {"Barbel", 10, 30, 5}
+setGabungan = setAlatGym.symmetric_difference(setBeban)
+print(setGabungan) #{'Dumbell', 5, 10, 'Pull up bar', 30} keep all but not the duplicates
+
+# Set Methods
+thisset = {'apple', 'banana', 'cherry'}
+print('banana' not in thisset) #False
+
 
 
 
