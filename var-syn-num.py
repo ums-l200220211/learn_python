@@ -603,7 +603,135 @@ print(setGabungan) #{'Dumbell', 5, 10, 'Pull up bar', 30} keep all but not the d
 thisset = {'apple', 'banana', 'cherry'}
 print('banana' not in thisset) #False
 
+# Dictionary (unordered, changeable and indexed)
+dictAlatGym = {
+    "Barbel": 20,
+    "Dumbell": 10,
+    "Pull up bar": 30
+}
+print(dictAlatGym)
+
+# Dictionary Items
+print(dictAlatGym["Barbel"]) #20
+print(dictAlatGym.get("Dumbell")) #10
+print(dictAlatGym.keys()) #dict_keys(['Barbel', 'Dumbell', 'Pull up bar'])
+print(dictAlatGym.values()) #dict_values([20, 10, 30])
+print(dictAlatGym.items()) #dict_items([('Barbel', 20), ('Dumbell', 10), ('Pull up bar', 30])
+
+# dict() Constructor
+dictAlatGym = dict(Barbel=20, Dumbell=10, Pullupbar=30)
+print(dictAlatGym) #{'Barbel': 20, 'Dumbell': 10, 'Pullupbar': 30}
+
+# del keyword
+del dictAlatGym["Barbel"]
+print(dictAlatGym) #{'Dumbell': 10, 'Pull up bar': 30}
+
+# pop() method
+dictAlatGym.pop("Dumbell")
+print(dictAlatGym) #{'Pull up bar': 30}
+
+# popitem() method
+dictAlatGym.popitem()
+print(dictAlatGym) #{}
+
+# clear() method
+dictAlatGym.clear()
+print(dictAlatGym) #{}
 
 
+# access items
+dictAlatGym = {
+    "Barbel": 20,
+    "Dumbell": 10,
+    "Pull up bar": 30
+}
+for i in dictAlatGym:
+    print(i) #Barbel Dumbell Pull up bar
+for i in dictAlatGym:
+    print(dictAlatGym[i]) #20 10 30
+for i in dictAlatGym.values():
+    print(i) #20 10 30
+for i in dictAlatGym.keys():
+    print(i) #Barbel Dumbell Pull up bar
+for i, j in dictAlatGym.items():
+    print(i, j) #Barbel 20 Dumbell 10 Pull up bar 30
+    
+# add new item to dictionary
+dictAlatGym["Kettlebell"] = 15
+print(dictAlatGym) #{'Barbel': 20, 'Dumbell': 10, 'Pull up bar': 30, 'Kettlebell': 15}
 
+# update() method
+dictAlatGym.update({"Bench press": 25})
+print(dictAlatGym) #{'Barbel': 20, 'Dumbell': 10, 'Pull up bar': 30, 'Kettlebell': 15, 'Bench press': 25}
+
+# Nested Dictionaries
+dictAlatGym = {
+    "Barbel": {
+        "Beban": 20,
+        "Jumlah": 2
+    },
+    "Dumbell": {
+        "Beban": 10,
+        "Jumlah": 4
+    },
+    "Pull up bar": {
+        "Beban": 30,
+        "Jumlah": 1
+    }
+}
+print(dictAlatGym)
+
+# check if key exists
+print("Barbel" in dictAlatGym) #True
+# 
+if "Dumbell" in dictAlatGym:
+    print("Yes, 'Dumbell' in dictAlatGym") #Yes, 'Dumbell' in dictAlatGym   
+  
+# Loop Through a Dictionary
+for i in dictAlatGym:
+    print(i) #Barbel Dumbell Pull up bar
+for i in dictAlatGym:
+    print(dictAlatGym[i]) #{'Beban': 20, 'Jumlah': 2} {'Beban': 10, 'Jumlah': 4} {'Beban': 30, 'Jumlah': 1}
+for i in dictAlatGym.values():
+    print(i) #{'Beban': 20, 'Jumlah': 2} {'Beban': 10, 'Jumlah': 4} {'Beban': 30, 'Jumlah': 1}
+for i in dictAlatGym.keys():
+    print(i) #Barbel Dumbell Pull up bar
+for i, j in dictAlatGym.items():
+    print(i, j) #Barbel {'Beban': 20, 'Jumlah': 2} Dumbell {'Beban': 10, 'Jumlah': 4} Pull up bar {'Beban': 30, 'Jumlah': 1}
+    
+# copy a dictionary
+newDictAlatGym = dictAlatGym.copy()
+print(newDictAlatGym) #{'Barbel': {'Beban': 20, 'Jumlah': 2}, 'Dumbell': {'Beban': 10, 'Jumlah': 4}, 'Pull up bar': {'Beban': 30, 'Jumlah': 1}}
+
+# dict() Constructor
+newDictAlatGym = dict(dictAlatGym)
+print(newDictAlatGym) #{'Barbel': {'Beban': 20, 'Jumlah': 2}, 'Dumbell': {'Beban': 10, 'Jumlah': 4}, 'Pull up bar': {'Beban': 30, 'Jumlah': 1}}
+
+# Nested tree Dictionaries 
+myfamily = {
+    "child1" : {
+        "name" : "Emil",
+        "year" : 2004
+    },
+    "child2" : {
+        "name" : "Tobias",
+        "year" : 2007
+    },
+    "child3" : {
+        "name" : "Linus",
+        "year" : 2011
+    }
+}
+print(myfamily)
+
+a = {'name': 'John', 'age': 36, 'country': 'Norway'}
+b = {'name': 'mandy', 'age': 24, 'country': 'Indonesia'}
+c = {'name': 'mike', 'age': 30, 'country': 'USA'}
+myfamily = {'child1': a, 'child2': b, 'child3': c}
+print(myfamily)
+
+# Access Items in Nested Dictionaries
+print(myfamily["child1"]["name"]) #Emil
+print(myfamily["child2"]["year"]) #2007
+print(myfamily["child3"]["name"]) #Linus
 
