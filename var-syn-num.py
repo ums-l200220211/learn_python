@@ -794,4 +794,294 @@ b = 200
 if b > a:
     pass #empty block of code that does nothing 
     
+# Python Loops
+# for loop
+book = ["Python", "Java", "C++"]
+for i in book:
+    print(i)
+
+# while loop
+i = 1
+while i < 6: #print i as long as i is less than 6
+    print(i) 
+    i += 1 
+
+# break statement
+i = 1
+while i < 6:
+    print(i)
+    if i == 3: 
+        break #stop the loop even if the while condition is true
+    i += 1
+
+# continue statement
+i = 0
+while i < 6:
+    i += 1
+    if i == 3:
+        continue #skip the iteration if i == 3
+    print(i)
+
+# else statement
+i = 1
+while i < 6: 
+    print(i)
+    i += 1
+else: 
+    print("i is no longer less than 6") 
+
+# for loop
+for i in range(6): #range(6) = 0, 1, 2, 3, 4, 5
+    print(i)
+
+# range() function
+for i in range(2, 6): #range(2, 6) = 2, 3, 4, 5
+    print(i)
+for i in range(2, 30, 3): #range(2, 30, 3) = 2, 5, 8, 11, 14, 17, 20, 23, 26, 29
+    print(i)
+
+# else in for loop
+for i in range(6):
+    print(i)
+else:
+    print("Finally finished!")
     
+# Nested Loops
+adj = ["red", "big", "tasty"]
+fruits = ["apple", "banana", "cherry"]
+for j in adj:
+    for i in fruits:
+        print(j, i)
+
+# pass statement
+for i in [0, 1, 2]: 
+    pass #empty block of code that does nothing
+
+# Python Functions
+def my_function():
+    print("Hello from a function")
+my_function()
+
+# Arguments
+def my_function(fname):
+    print(fname + " Refsnes")
+my_function("Emil")
+my_function("Tobias")
+my_function("Linus")
+
+# Number of Arguments
+def my_function(fname, lname):
+    print(fname + " " + lname)
+my_function("Emil", "Refsnes")
+my_function("Naufal", "Maulana")
+    
+# Arbitrary Arguments, *args
+def my_function(*kids): #*args = arbitrary arguments UNTUK MENANGANI SEJUMLAH ARGUMENTS
+    print("The youngest child is " + kids[2]) #access the second argument
+my_function("Emil", "Tobias", "Linus", "ZUL") #The youngest child is Linus
+
+# Keyword Arguments
+def my_function(child3, child2, child1):
+    print("The youngest child is " + child2)
+my_function(child1 = "Emil", child2 = "Tobias", child3 = "Linus")
+
+# Arbitrary Keyword Arguments, **kwargs
+def my_function(**kid): #**kwargs = arbitrary keyword arguments UNTUK MENANGANI SEJUMLAH KEYWORD ARGUMENTS
+    print("His last name is " + kid["lname"])
+my_function(fname = "Tobias", lname = "Refsnes")
+
+# Default Parameter Value
+def my_function(country = "Norway"):
+    print("I am from " + country)
+my_function("Sweden")
+my_function("India")
+my_function()
+my_function("Brazil")
+
+# Passing a List as an Argument
+def my_function(food):
+    for i in food:
+        print(i)
+fruits = ["apple", "banana", "cherry"]
+my_function(fruits)
+
+# Return Values
+def my_function(x):
+    return 5 * x
+print(my_function(3))
+print(my_function(5))
+print(my_function(9))
+
+# The pass Statement
+def myfunction():
+    pass #empty block of code that does nothing
+
+# Positional-Only Arguments
+def my_function(x, /):
+    return x
+print(my_function(3))
+my_function(3) #3
+# print(my_function(x=3)) #error
+
+# Combining Positional and Keyword Arguments
+def my_function(x, y, /, z, *, a, b):
+    return x + y + z + a + b
+print(my_function(1, 2, z=3, a=4, b=5)) #15
+
+# recursion
+def tri_recursion(k):
+    if k > 0: 
+        result = k + tri_recursion(k - 1) #recursion
+        print(result) 
+    else:
+        result = 0 
+    return result 
+tri_recursion(6) #1 3 6 10 15 21
+
+# python lambda
+x = lambda a : a + 10
+print(x(5)) #15
+x = lambda a, b : a * b
+print(x(5, 6)) #30
+x = lambda a, b, c : a + b + c
+print(x(5, 6, 2)) #13
+
+# use lambda functions when an anonymous function is required for a short period of time
+def myfunc(n):
+    return lambda a : a * n
+mydoubler = myfunc(2) #create a function that always doubles the number
+mytripler = myfunc(3) #create a function that always triples the number
+print(mydoubler(11)) #22  
+print(mytripler(11)) #33
+
+# python iteration
+# iter() function
+mytuple = ("apple", "banana", "cherry")
+myit = iter(mytuple)
+print(next(myit)) #apple
+print(next(myit)) #banana
+print(next(myit)) #cherry
+
+mystr = "banana"
+myit = iter(mystr)
+print(next(myit)) #b
+print(next(myit)) #a
+print(next(myit)) #n
+print(next(myit)) #a
+print(next(myit)) #n
+print(next(myit)) #a
+#print(next(myit)) #error
+
+# Looping Through an Iterator
+mytuple = ("apple", "banana", "cherry")
+for x in mytuple:
+    print(x)
+
+mystr = "banana"
+for x in mystr:
+    print(x)
+
+# Create an Iterator
+class MyNumbers:
+    def __iter__(self): #create an iterator that returns numbers, starting with 1, and each sequence will increase by one
+        self.a = 1
+        return self 
+    def __next__(self): #to prevent the iteration to go on forever, we can use the StopIteration statement
+        x = self.a
+        self.a += 1
+        return x
+myclass = MyNumbers()
+myiter = iter(myclass)
+print(next(myiter)) #1
+print(next(myiter)) #2
+print(next(myiter)) #3
+print(next(myiter)) #4
+print(next(myiter)) #5
+
+# StopIteration
+class MyNumbers:
+    def __iter__(self):
+        self.a = 1
+        return self 
+    def __next__(self):
+        if self.a <= 20:
+            x = self.a
+            self.a += 1
+            return x
+        else:
+            raise StopIteration
+myclass = MyNumbers()
+myiter = iter(myclass)
+for x in myiter:
+    print(x)
+    
+# polymorphism
+class Shark:
+    def swim(self):
+        print("The shark is swimming.")
+    def swim_backwards(self):
+        print("The shark cannot swim backwards, but can sink backwards.")
+    def skeleton(self):
+        print("The shark's skeleton is made of cartilage.")
+class Clownfish:
+    def swim(self):
+        print("The clownfish is swimming.")
+    def swim_backwards(self):
+        print("The clownfish can swim backwards.")
+    def skeleton(self):
+        print("The clownfish's skeleton is made of bone.")
+def in_the_pacific(fish):
+    fish.skeleton()
+sammy = Shark()
+casey = Clownfish()
+in_the_pacific(sammy)
+in_the_pacific(casey)
+
+# polymorphism different class with the same method
+class Car:
+  def __init__(self, brand, model):
+    self.brand = brand
+    self.model = model
+
+  def move(self):
+    print("Drive!")
+
+class Boat:
+  def __init__(self, brand, model):
+    self.brand = brand
+    self.model = model
+
+  def move(self):
+    print("Sail!")
+
+class Plane:
+  def __init__(self, brand, model):
+    self.brand = brand
+    self.model = model
+
+  def move(self):
+    print("Fly!")
+
+car1 = Car("Ford", "Mustang")       #Create a Car object
+boat1 = Boat("Ibiza", "Touring 20") #Create a Boat object
+plane1 = Plane("Boeing", "747")     #Create a Plane object
+
+for x in (car1, boat1, plane1):
+  x.move()
+
+# inheritance Class Polymorphism
+class Animal:
+    def __init__(self, name):
+        self.name = name
+    def speak(self):
+        raise NotImplementedError("Subclass must implement abstract method") #abstract method
+class Dog(Animal):
+    def speak(self):
+        return self.name + " says Woof!"
+class Cat(Animal):
+    def speak(self):
+        return self.name + " says Meow!"
+fido = Dog("Fido")
+isis = Cat("Isis")
+print(fido.speak()) #Fido says Woof!
+print(isis.speak()) #Isis says Meow
