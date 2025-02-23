@@ -1085,3 +1085,11 @@ fido = Dog("Fido")
 isis = Cat("Isis")
 print(fido.speak()) #Fido says Woof!
 print(isis.speak()) #Isis says Meow
+
+# python string formatting
+price = 49
+txt = "The price is {} dollars"
+print(txt.format(price)) #The price is  
+txt = "The price is {:.2f} dollars"
+print(txt.format(price)) #The price is
+
