@@ -1093,3 +1093,208 @@ print(txt.format(price)) #The price is
 txt = "The price is {:.2f} dollars"
 print(txt.format(price)) #The price is
 
+# array
+cars = ["Ford", "Volvo", "BMW"]
+x = cars[0]
+cars[0] = "Toyota"
+print(x) #Ford
+print(cars) #['Toyota', 'Volvo', 'BMW']
+
+# looping array elements
+for x in cars:
+    print(x)
+
+# adding array elements
+cars.append("Honda")
+print(cars) #['Toyota', 'Volvo', 'BMW', 'Honda']
+
+# removing array elements
+cars.pop(1)
+print(cars) #['Toyota', 'BMW', 'Honda']
+
+# array length
+print(len(cars)) #3
+
+# array methods
+cars.clear()
+print(cars) #[]
+cars = ["Ford", "Volvo", "BMW"]
+x = cars.copy()
+print(x) #['Ford', 'Volvo', 'BMW']
+x = cars.count("Ford")
+print(x) #1
+
+x = cars.index("Volvo")
+print(x) #1
+cars.insert(1, "Toyota")
+print(cars) #['Ford', 'Toyota', 'Volvo', 'BMW', 1]
+cars.remove("Volvo")
+print(cars) #['Ford', 'Toyota', 'BMW', 1]
+cars.reverse()
+print(cars) #[1, 'BMW', 'Toyota', 'Ford']
+cars.sort()
+print(cars) #[1, 'BMW', 'Ford', 'Toyota']
+#extend() method
+cars.extend(["Honda", "Jeep", "Kia"])
+print(cars) #[1, 'BMW', 'Ford', 'Toyota', 'Honda', 'Jeep', 'Kia']
+
+# python classes and objects
+# create a class
+class MyClass:
+    x = 5
+# create object
+p1 = MyClass() #create an object named p1, and print the value of x
+print(p1.x) #5 
+
+# __init__() function
+class Person:
+    def __init__(self, name, age): #use the __init__() function to assign values to object properties
+        self.name = name
+        self.age = age
+p1 = Person("John", 36) #create an object named p1, and send the values of name and age
+print(p1.name) #John
+print(p1.age) #36
+
+# the __str__() function
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+    def __str__(self): #use the __str__() function to print a readable string representation of the object
+        return "Hello my name is " + self.name    
+p1 = Person("John", 36)
+print(p1) #Hello my name is John
+
+# object methods
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+    def myfunc(self): #insert a method that prints
+        print("Hello my name is " + self.name)
+p1 = Person("Zul", 20)
+p1.myfunc()
+
+# self parameter
+class Person:
+    def __init__(mysillyobject, name, age):
+        mysillyobject.name = name
+        mysillyobject.age = age
+    def myfunc(abc): #use the words mysillyobject and abc instead of self
+        print("Hello my name is " + abc.name)
+p1 = Person("John", 36)
+p1.myfunc()
+
+# modify object properties
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+    def myfunc(self):
+        print("Hello my name is " + self.name)
+p1 = Person("John", 36)
+p1.age = 40
+print(p1.age)
+
+# delete object properties
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+    def myfunc(self):
+        print("Hello my name is " + self.name)  
+p1 = Person("John", 36)
+del p1.age
+# print(p1.age) #error karena sudah dihapus
+
+# the pass statement
+class Person:
+    pass #empty class
+
+# python inheritance (subclass and superclass)
+class Person:
+    def __init__(self, fname, lname):
+        self.firstname = fname
+        self.lastname = lname
+    def printname(self):
+        print(self.firstname, self.lastname)
+x = Person("John", "Doe")
+x.printname()
+
+# create a child class
+class Student(Person):
+    pass
+x = Student("Mike", "Olsen")
+x.printname()
+
+# add the __init__() function
+class Student(Person):
+    def __init__(self, fname, lname): #add the __init__() function to the child class
+        Person.__init__(self, fname, lname) #use the super() function
+x = Student("Mike", "Olsen")
+x.printname()
+
+# use the super() function
+class Student(Person):
+    def __init__(self, fname, lname): #add the __init__() function to the child class
+        super().__init__(fname, lname) #use the super() function to inherit all methods and properties from the parent
+x = Student("Mike", "Olsen") #use the super() function
+x.printname()
+
+# add properties
+class Student(Person):
+    def __init__(self, fname, lname, year): #add properties
+        super().__init__(fname, lname)
+        self.graduationyear = year
+x = Student("Mike", "Olsen", 2019)
+print(x.graduationyear)
+
+# add methods
+class Student(Person):
+    def __init__(self, fname, lname, year): 
+        super().__init__(fname, lname) 
+        self.graduationyear = year 
+    def welcome(self): #add methods to the child class
+        print("Welcome", self.firstname, self.lastname, "to the class of", self.graduationyear) #add methods to the child class 
+x = Student("Mike", "Olsen", 2019)
+x.welcome()
+
+# scope of variables
+def myfunc():
+    x = 300
+    print(x)
+myfunc()
+# print(x) #error
+
+# Function Inside Function
+def myfunc():
+    def myinnerfunc():
+        print("Zul")
+    myinnerfunc()
+myfunc()
+
+# Global variable
+x = 300
+def myfunc():
+    print(x)
+myfunc()
+print(x)
+
+# Change Global Variable
+x = 300
+def myfunc():
+    global x #change the value of x in the inner function
+    x = 200
+myfunc() 
+print(x)
+
+# nonlocal keyword
+def myfunc():
+    x = 300
+    def myinnerfunc():
+        nonlocal x #change the value of x in the inner function
+        x = 200
+    myinnerfunc()
+    print(x)
+myfunc()
+
