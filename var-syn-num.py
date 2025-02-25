@@ -1298,3 +1298,31 @@ def myfunc():
     print(x)
 myfunc()
 
+# python modules
+# import the module
+import mymodule
+mymodule.greeting("Jonathan")
+
+# use the module
+import mymodule
+a = mymodule.person1["age"]
+print(a)
+
+# rename a module
+import mymodule as mx
+a = mx.person1["age"]
+print(a)
+
+# built-in modules
+import platform
+x = platform.system()
+print(x)
+
+# using the dir() function
+import platform
+x = dir(platform)
+print(x)
+
+# import from module
+from mymodule import person1 #import only the person1 dictionary from the module
+print (person1["age"]) 
