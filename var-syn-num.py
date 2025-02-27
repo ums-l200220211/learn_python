@@ -1326,3 +1326,141 @@ print(x)
 # import from module
 from mymodule import person1 #import only the person1 dictionary from the module
 print (person1["age"]) 
+
+# import datetime 
+import datetime
+x = datetime.datetime.now()
+print(x)
+
+# return the year and name of weekday
+import datetime
+x = datetime.datetime.now()
+print(x.year)
+print(x.strftime("%A")) #return the name of the weekday 
+
+# create a date object
+import datetime
+x = datetime.datetime(2020, 5, 17)
+print(x)
+
+# the strftime() method
+import datetime
+x = datetime.datetime(2018, 6, 1)
+print(x.strftime("%B")) #June   
+
+# create a date object
+import datetime
+x = datetime.datetime(2018, 6, 1)
+print(x.strftime("%c")) #Fri Jun  1 00:00:00 2018
+
+# Python Math
+import math
+x = math.sqrt(64) #return the square root of 64
+print(x) #8.0
+
+# the math.ceil() method
+import math
+x = math.ceil(1.4) #return the rounded number up (pembulatan ke atas)
+print(x) #2
+
+# the math.floor() method
+import math
+x = math.floor(1.4) #return the rounded number down (pembulatan ke bawah)
+print(x) #1
+
+# the math.pi constant
+import math
+x = math.pi
+print(x) #3.141592653589793
+
+# the math.e constant
+import math
+x = math.e #return the value of e (2.718281828459045)
+print(x) #2.718281828459045
+
+# the math.pow() method
+import math
+x = math.pow(4, 3) #return the value of 4 to the power of 3 (same as 4 * 4 * 4)
+print(x) #64.0
+
+# the math.log() method
+import math
+x = math.log(64) #return the natural logarithm of 64 (logaritma natural)
+print(x) #4.158883083359671
+
+# the math.exp() method
+import math
+x = math.exp(2) #return the value of e to the power of 2 (same as e * e)
+print(x) #7.3890560989306495
+
+# the math.sin() method
+import math
+x = math.sin(90) #return the sine of 90 degrees
+print(x) #0.8939966636005579
+
+# the math.cos() method
+import math
+x = math.cos(90) #return the cosine of 90 degrees
+print(x) #-0.4480736161291701
+
+# the math.tan() method
+import math
+x = math.tan(90) #return the tangent of 90 degrees
+print(x) #-1.995200412208242
+
+# the math.degrees() method
+import math
+x = math.degrees(1.5708) #convert the value of 1.5708 from radians to degrees
+print(x) #90.0
+
+# the math.pi constant
+import math
+x = math.pi
+print(x) #3.141592653589793
+
+# json module
+#json to python
+import json
+# some JSON
+x = '{"name":"John", "age":30, "city":"New York"}'
+# parse x
+y = json.loads(x)
+print(y["age"]) #30
+
+# convert from Python to JSON
+import json
+# a Python object (dict)
+x = {
+    "name": "John",
+    "age": 30,
+    "city": "New York"
+}
+# convert into JSON
+y = json.dumps(x) #convert the Python object into a JSON string
+print(y) #{"name": "John", "age": 30, "city": "New York"}
+
+# convert Python objects into JSON strings, and print the values
+import json
+print(json.dumps({"name": "John", "age": 30}))
+print(json.dumps(["apple", "bananas"]))
+print(json.dumps(("apple", "bananas")))
+print(json.dumps("hello"))
+print(json.dumps(42))
+print(json.dumps(31.76))
+print(json.dumps(True))
+print(json.dumps(False))
+print(json.dumps(None))
+
+# format the result
+import json
+x = {
+    "name": "John",
+    "age": 30,
+    "city": "New York"
+}
+print(json.dumps(x, indent=4)) #use the indent parameter to define the numbers of indents
+print(json.dumps(x, indent=4, separators=(". ", " = "))) #use the separators parameter to change the default separator
+
+
+
+
