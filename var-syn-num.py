@@ -1424,7 +1424,8 @@ import json
 # some JSON
 x = '{"name":"John", "age":30, "city":"New York"}'
 # parse x
-y = json.loads(x)
+y = json.loads(x) #convert the JSON string into a Python dictionary
+print(y) #{'name': 'John', 'age': 30, 'city': 'New York'}
 print(y["age"]) #30
 
 # convert from Python to JSON
@@ -1460,6 +1461,91 @@ x = {
 }
 print(json.dumps(x, indent=4)) #use the indent parameter to define the numbers of indents
 print(json.dumps(x, indent=4, separators=(". ", " = "))) #use the separators parameter to change the default separator
+
+# convert a Python object containing all the legal data types
+import json
+x = {
+    "name": "John",
+    "age": 30,
+    "married": True,
+    "divorced": False,
+    "children": ("Ann", "Billy"),
+    "pets": None,
+    "cars": [
+        {"model": "BMW 230", "mpg": 27.5},
+        {"model": "Ford Edge", "mpg": 24.1}
+    ]
+}
+
+print(json.dumps(x))
+
+# format the result
+import json
+print(json.dumps(x, indent=4)) #use the indent parameter to define the numbers of indents
+
+# use separators parameter to change the default separator
+import json
+print(json.dumps(x, indent=4, separators=(". ", " = "))) #use the separators parameter to change the default separator
+
+# order the result
+import json
+print(json.dumps(x, indent=4, sort_keys=True)) #use the sort_keys parameter to specify if the result should be sorted or not
+
+# Python RegEx
+# search the string to see if it starts with "The" and ends with "Spain"
+import re
+txt = "The rain in Spain"
+x = re.search("^The.*Spain$", txt) #check if the string starts with "The" and ends with "Spain"
+if x:
+    print("YES! We have a match!")
+else:
+    print("No match")
+    
+# RegEx Functions
+# findall() function    
+import re
+txt = "The rain in Spain"
+x = re.findall("ai", txt) #return a list containing all matches
+print(x) #['ai', 'ai']
+x = re.findall("Portugal", txt) #return an empty list if no match was found
+print(x) #[]
+x = re.findall("Spain", txt)
+print(x) #['Spain']
+
+# search() function
+import re
+txt = "Th e rain in Spain"
+x = re.search("\s", txt) #search for a white-space character
+print("The first white-space character is located in position:", x.start()) #return the position (start- and end-position) of the first match
+
+# split() function
+import re
+txt = "The rain in Spa in"
+x = re.split("\s", txt) #split the string at each white-space character
+print(x) #['The', 'rain', 'in', 'Spain']
+
+# sub() function
+import re
+txt = "The rain in Spain"
+x = re.sub("\s", "9", txt) #replace the white-space characters with the digit 9
+print(x) #The9rain9in9Spain
+x = re.sub("\s", "9", txt, 2) #replace the first 2 occurrences
+print(x) #The9rain9in Spain
+
+# Match Object
+import re
+txt = "The rain in Spain"
+x = re.search("ai", txt) #search for an upper case "S" character in the beginning of a word, and return a match object
+print(x) #<re.Match object; span=(5, 7), match='ai'>
+
+# The Match object has properties and methods used to retrieve information about the search, and the result
+import re
+txt = "The rain in Spain"
+x = re.search(r"\bS\w+", txt) #span=(12, 17), match='Spain'
+print(x.span()) #return a tuple containing the start-, and end positions of the match
+print(x.string) #return the string passed into the function
+print(x.group()) #return the part of the string where there was a match
+
 
 
 
