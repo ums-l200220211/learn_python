@@ -1546,6 +1546,78 @@ print(x.span()) #return a tuple containing the start-, and end positions of the 
 print(x.string) #return the string passed into the function
 print(x.group()) #return the part of the string where there was a match
 
+# PIP (Python Package Index)
+# install the package
+# pip install camelcase (install the camelcase package)
+# uninstall the package
+# pip uninstall camelcase (uninstall the camelcase package)
+# list the installed packages
+# pip list (list all the packages installed on your system)
+# show the package information
+# pip show camelcase (show information about the camelcase package)
+# update the package    
+# pip install --upgrade camelcase (update the camelcase package)
+
+
+# use the package
+# import camelcase
+# c = camelcase.CamelCase()
+# txt = "hello world"
+# print(c.hump(txt))
+
+# Python Try Except 
+# The try block will generate an exception, because x is not defined
+# try:
+#     print(x) #NameError: name 'x' is not defined
+# except: 
+#     print("An exception occurred") #An exception occurred
+    
+# # The try block does not generate any exception
+# try: 
+#     print("Hello")
+# except:
+#     print("Something went wrong")
+# else:
+#     print("Nothing went wrong")
+    
+# # The finally block, if specified, will be executed regardless if the try block raises an error or not
+# try:
+#     print(x)
+# except:
+#     print("Something went wrong") 
+# finally: 
+#     print("The 'try except' is finished") #The 'try except' is finished
+    
+# # The try block will raise an error when trying to write to a read-only file
+# try:
+#     f = open("demofile.txt")
+#     f.write("Lorum Ipsum")
+# except:
+#     print("Something went wrong when writing to the file")
+# finally:
+#     f.close()
+
+# Raise an exception
+# x = -1
+# if x < 0:
+#     raise Exception("Sorry, no numbers below zero") #raise an error and stop the program if x is lower than 0
+
+# Raise a TypeError if x is not an integer
+# x = "hello"
+# if not type(x) is int:
+#     raise TypeError("Only integers are allowed") #raise an error if x is not an integer
+
+# Python User Input
+username = input("Enter username:")
+print("Username is: " + username)
+
+# another example user input
+
+
+
+
+    
+    
 
 
 
