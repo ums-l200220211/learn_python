@@ -1611,9 +1611,29 @@ print(x.group()) #return the part of the string where there was a match
 username = input("Enter username:")
 print("Username is: " + username)
 
-# another example user input
+# python file handling
+# open file
+f = open("data.txt", "w")
+f.write("Hello, world!")
+f.close()
 
+# read file
+f = open("data.txt", "r")
+print(f.read())
+f.close()   
 
+# append file
+f = open("data.txt", "a")
+f.write("\nHello, world!")
+f.close()
+
+# with statement
+with open("data.txt", "r") as f:
+    print(f.read())
+
+write = open("coba.txt", "w")
+write.write("Hello, world!")
+write.close()
 
 
     
